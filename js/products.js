@@ -8,6 +8,7 @@ function displayProducts(products) {
 
     // Find the container where products will be displayed
     const container = document.querySelector('#all-products .container');
+    const fragment = document.createDocumentFragment();
 
    
     // Iterate over each product and create the HTML structure safely
@@ -22,7 +23,9 @@ function displayProducts(products) {
         const img = document.createElement('img');
         img.src = product.image;
         img.alt = `product: ${product.title}`;
-        img.width=250;
+        img.width = 250;
+        img.loading = 'lazy';
+        img.style.height = 'auto';
         pictureDiv.appendChild(img);
 
         // Create the product info div
@@ -47,21 +50,12 @@ function displayProducts(products) {
         button.textContent = 'Add to bag';
 
         // Append elements to the product info div
-        infoDiv.appendChild(category);
-        infoDiv.appendChild(title);
-        infoDiv.appendChild(price);
-        infoDiv.appendChild(button);
-
-        // Append picture and info divs to the main product element
-        productElement.appendChild(pictureDiv);
-        productElement.appendChild(infoDiv);
-
-        // Append the new product element to the container
-        container.appendChild(productElement);
+        infoDiv.append(category, title, price, button);
+        productElement.append(pictureDiv, infoDiv);
+        fragment.appendChild(productElement);
     });
 
-    
-
+    container.appendChild(fragment);
 }
 
 
