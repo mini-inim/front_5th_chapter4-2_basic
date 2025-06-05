@@ -40,7 +40,6 @@ PageSpeed Insights 링크
 | vr1              | 53KB           | 7KB              | 46KB      | 86.8%    |
 | vr2              | 89KB           | 12KB             | 77KB      | 86.5%    |
 | vr3              | 75KB           | 8KB              | 67KB      | 89.3%    |
-
 | 🔻 총 용량 절감  | **2,448KB → 328KB** | 총 절감: **2,120KB (약 86.6%)** |
 
 Lazy Loading 처리 
@@ -50,37 +49,50 @@ Lazy Loading 처리
      </picture>```
 사용자가 해당 영역까지 스크롤 할 때 로드되도록 해 초기 페이지 로딩 속도 향상
 
+
 ### 스크립트 최적화
-- 스크립트 동기 로드 → script defer 적용
-```<!-- Before: 동기 로드 -->
+
+- 스크립트 동기 로드 → `script defer` 적용
+
+**Before: 동기 로드**
+```html
 <script src="/js/main.js"></script>
 <script src="/js/products.js"></script>
+```
 
-<!-- After: defer 속성 적용 -->
+**After: defer 속성 적용**
+```html
 <script src="/js/main.js" defer></script>
-<script src="/js/products.js" defer></script>```
+<script src="/js/products.js" defer></script>
+```
 
-해당 스크립트를 읽는 동안 렌더링 차단이 발생해 <script defer> 처리
+해당 스크립트를 읽는 동안 렌더링 차단이 발생해 `<script defer>` 처리
+
+---
 
 - Cookie Consent 위치 변경
-```<script type="text/javascript" src="//www.freeprivacypolicy.com/public/cookie-consent/4.1.0/cookie-consent.js" charset="UTF-8" async defer></script>
-        <script type="text/javascript" charset="UTF-8">
-            window.addEventListener('load', function() {
-                if (typeof cookieconsent !== 'undefined') {
-                    cookieconsent.run({
-                        "notice_banner_type": "simple",
-                        "consent_type": "express",
-                        "palette": "light",
-                        "language": "en",
-                        "page_load_consent_levels": ["strictly-necessary"],
-                        "notice_banner_reject_button_hide": false,
-                        "preferences_center_close_button_hide": false,
-                        "page_refresh_confirmation_buttons": false,
-                        "website_name": "Performance Course"
-                    });
-                }
-            });
-        </script>```
 
-- 쿠키 동의 스크립트를 head 태그 내에서 실행 시 TBT가 발생해 성능 저하를 일으킴
-- 스크립트를 DOMContentLoaded 이벤트 이후에 실행되도록 수정
+```html
+<script type="text/javascript" src="//www.freeprivacypolicy.com/public/cookie-consent/4.1.0/cookie-consent.js" charset="UTF-8" async defer></script>
+<script type="text/javascript" charset="UTF-8">
+    window.addEventListener('load', function() {
+        if (typeof cookieconsent !== 'undefined') {
+            cookieconsent.run({
+                "notice_banner_type": "simple",
+                "consent_type": "express",
+                "palette": "light",
+                "language": "en",
+                "page_load_consent_levels": ["strictly-necessary"],
+                "notice_banner_reject_button_hide": false,
+                "preferences_center_close_button_hide": false,
+                "page_refresh_confirmation_buttons": false,
+                "website_name": "Performance Course"
+            });
+        }
+    });
+</script>
+```
+
+- 쿠키 동의 스크립트를 `<head>` 태그 내에서 실행 시 TBT가 발생해 성능 저하를 일으킴
+- 스크립트를 `DOMContentLoaded` 또는 `load` 이벤트 이후에 실행되도록 수정
+
