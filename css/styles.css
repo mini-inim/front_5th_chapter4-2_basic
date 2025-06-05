@@ -1,7 +1,11 @@
+
+
+
 body {
     margin: 0;
     font-family: 'Heebo';
     padding-top: 80px;
+    font-size: 16px; 
 }
 
 .container {
@@ -16,6 +20,10 @@ body {
 ul {
     margin: 0;
     padding: 0;
+}
+
+h1 {
+    font-size: 2rem;
 }
 
 header {
@@ -47,7 +55,7 @@ header .logo a {
 }
 
 header .logo .blue-dot {
-    background-color: #33c6dd;
+    background-color: #007a8e;
     width: 10px;
     height: 10px;
     display: inline-block;
@@ -82,7 +90,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #33c6dd;
+    color: #007a8e;
 }
 
 header nav ul li:last-of-type a {
@@ -98,11 +106,6 @@ section.hero img {
     width: 100%;
     height: auto;
     filter: brightness(50%);
-    display: none;
-}
-
-section.hero img.desktop {
-    display: initial;
 }
 
 .hero-content {
@@ -121,7 +124,7 @@ section.hero img.desktop {
     height: 100%;
 }
 
-.hero-content h1 {
+.hero-content h2 {
     max-width: 495px;
     color: #FFF;
     font-size: 50px;
@@ -149,7 +152,7 @@ section.hero img.desktop {
     width: 220px;
     max-width: 100%;
     border-radius: 92px;
-    background-color: #33c6dd;
+    background-color: #007a8e;
     color: #FFF;
     font-size: 16px;
     font-weight: 700;
@@ -162,9 +165,9 @@ section.hero img.desktop {
 }
 
 .hero-content button:hover {
-    color: #33c6dd;
+    color: #007a8e;
     background-color: #FFF;
-    border: 1px solid #33c6dd;
+    border: 1px solid #007a8e;
 }
 
 
@@ -185,7 +188,7 @@ section.best-sellers {
     padding-top: 80px;
 }
 
-section.best-sellers h1 {
+section.best-sellers h2 {
     text-align: center;
     font-size: 34px;
     letter-spacing: 0.85px;
@@ -196,7 +199,7 @@ section.best-sellers h1 {
 
 section.best-sellers hr {
     border: none;
-    border-top: 5px solid #33c6dd;
+    border-top: 5px solid #007a8e;
     width: 66px;
 }
 
@@ -234,7 +237,7 @@ section.best-sellers .product-slider .product img {
 }
 
 section.best-sellers .product-slider .product .product-picture {
-    height: 100%;
+    height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -263,7 +266,7 @@ section.best-sellers .product-slider .product .product-info {
 }
 
 section.best-sellers .product-slider .product .product-info .categories {
-    color: #33c6dd;
+    color: #007a8e;
     font-weight: normal;
     font-size: 14px;
     letter-spacing: 0.35px;
@@ -297,7 +300,8 @@ section.best-sellers .product-slider .product .product-info .price .discounted-p
 }
 
 section.best-sellers .product-slider .product .product-info .price .original-price {
-    color: #9B9B9B;
+     /* 대비 비율 4.5:1 이상을 확보할 수 있는 회색 (#767676) 사용 */
+    color: #767676;
     font-weight: normal;
     font-size: 16px;
     letter-spacing: 0.4px;
@@ -320,8 +324,8 @@ section.best-sellers .product-slider .product .product-info button {
 }
 
 section.best-sellers .product-slider .product:hover .product-info button {
-    background-color: #33c6dd;
-    border: 1px solid #33c6dd;
+    background-color: #007a8e;
+    border: 1px solid #007a8e;
     color: white;
 }
 
@@ -424,7 +428,7 @@ footer .bottom-nav ul li a {
 }
 
 footer .bottom-nav ul li a:hover {
-    color: #33c6dd;
+    color: #007a8e;
 }
 
 footer .bottom-nav ul li.list-title {
@@ -474,15 +478,7 @@ footer .copyright-text {
         display: inline-block;
     }
 
-    section.hero img.desktop {
-        display: none;
-    }
-
-    section.hero img.tablet {
-        display: initial;
-    }
-
-    .hero-content h1 {
+    .hero-content h2 {
         font-size: 40px;
         letter-spacing: 1px;
         line-height: 46px;
@@ -506,7 +502,7 @@ footer .copyright-text {
         padding-top: 50px;
     }
     
-    section.best-sellers h1 {
+    section.best-sellers h2 {
         font-size: 28px;
         letter-spacing: 0.7px;
         line-height: 38px;
@@ -612,21 +608,12 @@ footer .copyright-text {
         width: 7px;
         height: 7px;
     }
-
-    section.hero img.tablet {
-        display: none;
-    }
-
-    section.hero img.mobile {
-        display: initial;
-    }
-
     .hero-content {
         position: static;
         margin-bottom: 40px;
     }
 
-    .hero-content h1 {
+    .hero-content h2 {
         color: #000;
         font-size: 32px;
         letter-spacing: 0.8px;
@@ -658,7 +645,7 @@ footer .copyright-text {
         max-width: 360px;
     }
 
-    section.best-sellers h1 {
+    section.best-sellers h2 {
         font-size: 36px;
         letter-spacing: 0.6px;
         line-height: 38px;
@@ -666,7 +653,7 @@ footer .copyright-text {
     }
 
     section.best-sellers hr {
-        border-top: 4px solid #33c6dd;
+        border-top: 4px solid #007a8e;
         width: 40px;
     }
 
@@ -736,6 +723,3 @@ footer .copyright-text {
 
 }
 /* End of Design for Mobile Phones */
-
-
-
