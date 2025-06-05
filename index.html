@@ -62,7 +62,7 @@
                         <li><a href="about.html">About us</a></li>
                         <li><a href="index.html#best-sellers-section">Best Sellers</a></li>
                         <li><a href="index.html#newsletter-section">Newsletter</a></li>
-                        <li class="menu-icon"><img src="images/menu_icon.png" ></li>
+                        <li class="menu-icon"><img src="images/menu_icon.webp" ></li>
                     </ul>
                 </nav>
             </div>
@@ -70,10 +70,22 @@
         
         <section class="hero">
 
-            <img class="desktop" src="images/Hero_Desktop.jpg">
-            <img class="mobile" src="images/Hero_Mobile.jpg">
-            <img class="tablet" src="images/Hero_Tablet.jpg">
-
+            <img
+            src="images/Hero_Desktop.webp"
+            width="1920" 
+            height="1080"
+            srcset="
+                images/Hero_Mobile.webp  576w,
+                images/Hero_Tablet.webp  960w,
+                images/Hero_Desktop.webp 1920w
+            "
+            sizes="
+                (max-width: 576px) 100vw,
+                (max-width: 960px) 92vw,
+                100vw
+            "
+            alt="Hero Image"
+            />
            
             <div class="hero-content">
                 <div class="container">
@@ -98,7 +110,7 @@
 
                     <div class="product new">
                         <div class="product-picture">
-                            <img src="images/vr1.jpg" alt="product: Penom Case">
+                            <img loading="lazy" src="images/vr1.webp" alt="product: Penom Case" width="102" height="102">
                         </div>
                         <div class="product-info">
                             <h5 class="categories">Headsets, Apple</h5>
@@ -112,7 +124,7 @@
 
                     <div class="product new">
                         <div class="product-picture">
-                            <img src="images/vr2.jpg" alt="product: Noise Cancelling Headphone">
+                            <img loading="lazy" src="images/vr2.webp" alt="product: Noise Cancelling Headphone"  width="102" height="102">
                         </div>
                         <div class="product-info">
                             <h5 class="categories">Headsets, PS</h5>
@@ -126,7 +138,7 @@
 
                     <div class="product">
                         <div class="product-picture">
-                            <img src="images/vr3.jpg" alt="product: Canon Digital SLR EOS Rebel T6">
+                            <img loading="lazy" src="images/vr3.webp" alt="product: Canon Digital SLR EOS Rebel T6"  width="102" height="102">
                         </div>
                         <div class="product-info">
                             <h5 class="categories">Headsets, Oculus</h5>
@@ -212,8 +224,8 @@
          <a href="#" id="open_preferences_center">Update cookies preferences</a>
  
 
-        <script type="text/javascript" src="/js/main.js"></script>
-        <script type="text/javascript" src="/js/products.js"></script>
+        <script type="text/javascript" src="/js/main.js" defer></script>
+        <script type="text/javascript" src="/js/products.js" defer></script>
 
     </body>
 
