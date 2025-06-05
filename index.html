@@ -4,7 +4,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Home - Tech Shop</title>
         <meta name="description" content="Discover the latest VR headsets and tech gadgets at Tech Shop. Shop now for the best deals on top brands.">
         <meta name="keywords" content="VR headsets, tech gadgets, online shopping, best deals, top brands">
@@ -14,7 +14,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
         <!-- 2) Preload Hero image -->
-        <link
+        <!-- <link
             rel="preload"
             as="image"
             href="images/Hero_Desktop.webp"
@@ -28,7 +28,7 @@
             (max-width: 960px) 92vw,
             100vw
             "
-        />
+        /> -->
 
         <!-- 2) Preload main stylesheet, then load it -->
         <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Heebo:300,400,600,700&display=swap">
@@ -99,23 +99,20 @@
         </header>
         
         <section class="hero">
-            <img
-                class="desktop"
-                src="images/Hero_Desktop.webp"
-                width="1920" 
-                height="1080"
-                srcset="
-                    images/Hero_Mobile.webp  576w,
-                    images/Hero_Tablet.webp  960w,
-                    images/Hero_Desktop.webp 1920w
-                "
-                sizes="
-                    (max-width: 576px) 100vw,
-                    (max-width: 960px) 92vw,
-                    100vw
-                "
-                alt="Hero Image"
-            />
+            <picture>
+                <source media="(max-width: 576px)" srcset="images/Hero_Mobile.webp" />
+                <source media="(max-width: 960px)" srcset="images/Hero_Tablet.webp" />
+                <img
+                  src="images/Hero_Desktop.webp"
+                  width="1920"
+                  height="1080"
+                  alt="Hero Image"
+                  style="width: 100%; height: auto;"
+                  loading="eager"
+                  decoding="async"
+                  fetchpriority="high"
+                />
+            </picture>
 
             <div class="hero-content">
                 <div class="container">
