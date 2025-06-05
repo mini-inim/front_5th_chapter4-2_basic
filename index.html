@@ -4,76 +4,21 @@
 
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home - Tech Shop</title>
-        <meta name="description" content="Discover the latest VR headsets and tech gadgets at Tech Shop. Shop now for the best deals on top brands.">
-        <meta name="keywords" content="VR headsets, tech gadgets, online shopping, best deals, top brands">
-        
-        <!-- 1) Preconnect to Google Fonts domains -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-        href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700&display=swap"
-        rel="stylesheet"
-        />
-
-        <!-- 2) Preload Hero image -->
-        <!-- <link
-            rel="preload"
-            as="image"
-            href="images/Hero_Desktop.webp"
-            imagesrcset="
-            images/Hero_Mobile.webp  576w,
-            images/Hero_Tablet.webp  960w,
-            images/Hero_Desktop.webp 1920w
-            "
-            imagesizes="
-            (max-width: 576px) 100vw,
-            (max-width: 960px) 92vw,
-            100vw
-            "
-        /> -->
-
-        <!-- 2) Preload main stylesheet, then load it -->
-        <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Heebo:300,400,600,700&display=swap">
-        <link href="https://fonts.googleapis.com/css?family=Heebo:300,400,600,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-        <noscript>
-            <link href="https://fonts.googleapis.com/css?family=Heebo:300,400,600,700&display=swap" rel="stylesheet">
-        </noscript>
-
-        <link rel="preload" href="/css/styles.css" as="style">
-        <link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'">
-        <noscript><link rel="stylesheet" href="/css/styles.css"></noscript>
-
-        <!-- Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
-        <script type="text/javascript" src="//www.freeprivacypolicy.com/public/cookie-consent/4.1.0/cookie-consent.js" charset="UTF-8" defer></script>
-        <script type="text/javascript" charset="UTF-8">
-            window.addEventListener('DOMContentLoaded', function() {
-                if (window.cookieconsent) {
-                    cookieconsent.run({
-                        "notice_banner_type": "simple",
-                        "consent_type": "express",
-                        "palette": "light",
-                        "language": "en",
-                        "page_load_consent_levels": ["strictly-necessary"],
-                        "notice_banner_reject_button_hide": false,
-                        "preferences_center_close_button_hide": false,
-                        "page_refresh_confirmation_buttons": false,
-                        "website_name": "Performance Course"
-                    });
-                }
-            });
-        </script>
-
-         <!-- Google Tag Manager -->
-         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/styles.css">
+        <!-- <link rel="stylesheet" type="text/css" href="/css/slick.css"/> -->
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-PKK35GL5');
         </script>
-        <!-- End Google Tag Manager -->       
-              
+        <!-- End Google Tag Manager -->
     </head>
 
     <body>
@@ -98,33 +43,35 @@
                         <li><a href="about.html">About us</a></li>
                         <li><a href="index.html#best-sellers-section">Best Sellers</a></li>
                         <li><a href="index.html#newsletter-section">Newsletter</a></li>
-                        <li class="menu-icon"><img loading="lazy" src="images/menu_icon.webp" width="24" height="16.55"></li>
+                        <li class="menu-icon">
+                            <picture>
+                                <source srcset="images/menu_icon.webp" type="image/webp">
+                                <img src="images/menu_icon.png" alt="menu icon" loading="lazy">
+                            </picture>
+                        </li>
                     </ul>
                 </nav>
             </div>
         </header>
         
         <section class="hero">
-            <div style="aspect-ratio: 16 / 9;">
-                <picture>
-                    <source media="(max-width: 576px)" srcset="images/Hero_Mobile.webp" />
-                    <source media="(max-width: 960px)" srcset="images/Hero_Tablet.webp" />
-                    <img
-                    src="images/Hero_Desktop.webp"
-                    width="1920"
-                    height="1080"
-                    alt="Hero Image"
-                    style="width: 100%; height: auto;"
-                    loading="eager"
-                    decoding="async"
-                    fetchpriority="high"
-                    />
-                </picture>
-            </div>
+
+            <picture>
+                <source srcset="images/Hero_Desktop.webp" type="image/webp">
+                <img class="desktop" src="images/Hero_Desktop.jpg" loading="lazy" fetchpriority="low" alt="VR Headset Hero Image for Desktop">
+            </picture>
+            <picture>
+                <source srcset="images/Hero_Mobile.webp" type="image/webp">
+                <img class="mobile" src="images/Hero_Mobile.jpg" fetchpriority="high" alt="VR Headset Hero Image for Mobile">
+            </picture>
+            <picture>
+                <source srcset="images/Hero_Tablet.webp" type="image/webp">
+                <img class="tablet" src="images/Hero_Tablet.jpg" loading="lazy" fetchpriority="low" alt="VR Headset Hero Image for Tablet">
+            </picture>
 
             <div class="hero-content">
                 <div class="container">
-                    <h1 fetchpriority="high">Discover our line of VR Headsets</h1>
+                    <h1>Discover our line of VR Headsets</h1>
                     <p>
                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
                         doloremque laudantium.
@@ -145,11 +92,14 @@
 
                     <div class="product new">
                         <div class="product-picture">
-                            <img loading="lazy" src="images/vr1.webp" alt="product: Penom Case" width="102" height="102">
+                            <picture>
+                                <source srcset="images/vr1.webp" type="image/webp">
+                                <img src="images/vr1.jpg" alt="Apple VR Headset - Premium Virtual Reality Headset" loading="lazy">
+                            </picture>
                         </div>
                         <div class="product-info">
-                            <h5 class="categories">Headsets, Apple</h5>
-                            <h4 class="title">Apple Headset</h4>
+                            <h3 class="categories">Headsets, Apple</h3>
+                            <h2 class="title">Apple Headset</h2>
                             <h3 class="price">
                                 <span>US$ 450.00</span>
                             </h3>
@@ -159,11 +109,14 @@
 
                     <div class="product new">
                         <div class="product-picture">
-                            <img loading="lazy" src="images/vr2.webp" alt="product: Noise Cancelling Headphone"  width="102" height="102">
+                            <picture>
+                                <source srcset="images/vr2.webp" type="image/webp">
+                                <img src="images/vr2.jpg" alt="PlayStation VR Headset - Gaming Virtual Reality Headset" loading="lazy">
+                            </picture>
                         </div>
                         <div class="product-info">
-                            <h5 class="categories">Headsets, PS</h5>
-                            <h4 class="title">Playstation Headset</h4>
+                            <h3 class="categories">Headsets, PS</h3>
+                            <h2 class="title">Playstation Headset</h2>
                             <h3 class="price">
                                 <span>US$ 399.99</span>
                             </h3>
@@ -173,11 +126,14 @@
 
                     <div class="product">
                         <div class="product-picture">
-                            <img loading="lazy" src="images/vr3.webp" alt="product: Canon Digital SLR EOS Rebel T6"  width="102" height="102">
+                            <picture>
+                                <source srcset="images/vr3.webp" type="image/webp">
+                                <img src="images/vr3.jpg" alt="Oculus VR Headset - Advanced Virtual Reality Headset" loading="lazy">
+                            </picture>
                         </div>
                         <div class="product-info">
-                            <h5 class="categories">Headsets, Oculus</h5>
-                            <h4 class="title">Oculus Headset</h4>
+                            <h3 class="categories">Headsets, Oculus</h3>
+                            <h2 class="title">Oculus Headset</h2>
                             <h3 class="price">
                                 <span class="discounted-price">US$ 349.99</span>
                                 <span class="original-price">US$ 419.99</span>
@@ -201,7 +157,7 @@
         </section>
 
         <section class="newsletter" id="newsletter-section">
-            <h3>Newsletter Signup</h3>
+            <h2>Newsletter Signup</h2>
             <p>Subscribe now and don't miss a single deal!</p>
             <form>
                 <input type="email" name="email" placeholder="Your email...">
@@ -255,12 +211,29 @@
             </div>
         </footer>
 
+        <a href="#" id="open_preferences_center">Update cookies preferences</a>
 
-         <a href="#" id="open_preferences_center">Update cookies preferences</a>
- 
+        <script type="text/javascript" src="/js/main.js"></script>
+        <script type="text/javascript" src="/js/products.js"></script>
 
-        <script type="text/javascript" src="/js/main.js" defer></script>
-        <script type="text/javascript" src="/js/products.js" defer></script>
+        <script type="text/javascript" src="//www.freeprivacypolicy.com/public/cookie-consent/4.1.0/cookie-consent.js" charset="UTF-8" async defer></script>
+        <script type="text/javascript" charset="UTF-8">
+            window.addEventListener('load', function() {
+                if (typeof cookieconsent !== 'undefined') {
+                    cookieconsent.run({
+                        "notice_banner_type": "simple",
+                        "consent_type": "express",
+                        "palette": "light",
+                        "language": "en",
+                        "page_load_consent_levels": ["strictly-necessary"],
+                        "notice_banner_reject_button_hide": false,
+                        "preferences_center_close_button_hide": false,
+                        "page_refresh_confirmation_buttons": false,
+                        "website_name": "Performance Course"
+                    });
+                }
+            });
+        </script>
 
     </body>
 
